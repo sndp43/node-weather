@@ -1,6 +1,7 @@
 const path = require("path")
 const express = require("express")
 const hbs = require('hbs')
+//load custom modules
 const geocode = require('./utills/geocode')
 const forcast = require('./utills/forecast')
 
@@ -16,10 +17,12 @@ const partialsPath = path.join(__dirname,'../templates/partials')
 
 //set handlebars template engine and views location
 app.set("view engine","hbs")
+//change views folder path according to our needs as follows
 app.set("views",viewsPath)
+//partials are used to seperate common view scripts
 hbs.registerPartials(partialsPath)
 
-//tell express about publicDirectorypathcls
+//tell express about publicDirectorypath
 app.use(express.static(publicDirectoryPath))
 
 
