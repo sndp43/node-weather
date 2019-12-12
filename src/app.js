@@ -6,6 +6,9 @@ const forcast = require('./utills/forecast')
 
 const app = express()
 
+//getting port value from HEROKU || (or) Default
+const port = process.env.PORT || 3000
+
 //define paths for express engine
 const publicDirectoryPath = path.join(__dirname,"../public")
 const viewsPath = path.join(__dirname,'../templates/views')
@@ -102,6 +105,6 @@ app.get("*",(req,res)=>{
 })
 
 
-app.listen(3000,()=>{
-    console.log("server startted") 
+app.listen(port,()=>{
+    console.log("server startted @ port"+port) 
 })
