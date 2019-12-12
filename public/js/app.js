@@ -26,7 +26,7 @@ weatherForm.addEventListener('submit',(e)=>{
         }else{
 
             message1.textContent = data.location
-            message2.textContent = data.forecast.temperature
+            message2.textContent = data.forecast
             
         }
          
